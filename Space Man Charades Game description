@@ -1,0 +1,30 @@
+https://tekhnologic.wordpress.com/2017/03/01/spaceman-an-alternative-to-hangman/
+
+SPACE MAN CHARADES
+
+Our Project is called Space Man Charades a game for 4 players where
+1 player will decide on a word that will be validated to be a real 
+word thru some dictionary file that will be within the server to validate 
+its existence, if the player uses an unidentified word that player will be notified to try
+another until a word is satifactory and once that word is decided on and the difficulty 
+will adjusted depending on the size of the word as well.
+
+In this game the other players will have a chance to either guess the whole part of the word,
+but at the start of each round the 1st player who picked the word will have the chance to send 
+to all the other players a hint be it a msg or sound or picture it can also be a bogus hint to 
+try and steer them from getting the right answer because they get to gamble some points they get to say
+this game will end with Player 2 winning and if they do they get 3 points while player 2 will get two points  
+and all the other players will lose 1 point, the person who picked the word will not lose any points. 
+
+The game is played until one player has gotten 8 points in total and will be declared a winner. 
+As Player 2,3 and 4 guess the word by getting to pick only characters each time they guess wrong an image will begin 
+to start getting completed and once it is completely finished the round will end and everyone will lose a point 
+including the person who picked the word. And appart from this all the other players will be notified what character 
+was played by another player and even if say the word was "AARDVARK" and player 2 chose A it will only fill in the first A
+and not the others so P3 and P4 can all choose 'A' again too and end up with "AA___A__", but then if another player picks 'A'
+again the picture will be modified hence getting closer to a GAME OVER but after this the CHARACTER 'A' will become invisble
+(note: All the characters in the alphabet will be buttons in the Client's GUIs) and will make it impossible for another player
+to pick it.
+
+The game will continue until a victor is crowend and players can only be left at a minimum of -10 points after that they cannot
+be penalized or maybe if they get -15 points they get kicked out from the server.
