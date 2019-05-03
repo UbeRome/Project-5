@@ -66,211 +66,185 @@ public class Main extends Application {
         //******************************************************
         int length = word.length();
         A.setOnAction(Event->{
-            for(int count= 0; count< length; count++){
-                if('A' == word.indexOf(count) || 'A' != word.indexOf(count)){
-                    A.setDisable(true);
-                }
+            if(word.contains("A")){
+                A.setDisable(false);
             }
+            else A.setDisable(true);
         });
 
         B.setOnAction(Event->{
-            for(int count= 0; count< length; count++){
-                if('B' == word.indexOf(count) || 'B' != word.indexOf(count)){
-                    B.setDisable(true);
-                }
+            if(word.contains("B")){
+                B.setDisable(false);
             }
+            else B.setDisable(true);
         });
 
         C.setOnAction(Event->{
-            for(int count= 0; count< length; count++){
-                if('C' == word.indexOf(count) || 'C' != word.indexOf(count)){
-                    C.setDisable(true);
-                }
+            if(word.contains("C")){
+                C.setDisable(false);
             }
+            else C.setDisable(true);
         });
 
         D.setOnAction(Event->{
-            for(int count= 0; count< length; count++){
-                if('D' == word.indexOf(count) || 'D' != word.indexOf(count)){
-                    D.setDisable(true);
-                }
+            if(word.contains("D")){
+                D.setDisable(false);
             }
+            else D.setDisable(true);
         });
 
         E.setOnAction(Event->{
-            for(int count= 0; count< length; count++){
-                if('E' == word.indexOf(count) || 'E' != word.indexOf(count)){
-                    E.setDisable(true);
-                }
+            if(word.contains("E")){
+                E.setDisable(false);
             }
+            else E.setDisable(true);
         });
 
         F.setOnAction(Event->{
-            for(int count= 0; count< length; count++){
-                if('F' == word.indexOf(count) || 'F' != word.indexOf(count)){
-                    F.setDisable(true);
-                }
+            if(word.contains("F")){
+                F.setDisable(false);
             }
+            else F.setDisable(true);
         });
 
         G.setOnAction(Event->{
-            for(int count= 0; count< length; count++){
-                if('G' == word.indexOf(count) || 'G' != word.indexOf(count)){
-                    G.setDisable(true);
-                }
+            if(word.contains("G")){
+                G.setDisable(false);
             }
+            else G.setDisable(true);
         });
 
         H.setOnAction(Event->{
-            for(int count= 0; count< length; count++){
-                if('H' == word.indexOf(count) || 'H' != word.indexOf(count)){
-                    H.setDisable(true);
-                }
+            if(word.contains("H")){
+                H.setDisable(false);
             }
+            else H.setDisable(true);
         });
 
         I.setOnAction(Event->{
-            for(int count= 0; count< length; count++){
-                if('I' == word.indexOf(count) || 'I' != word.indexOf(count)){
-                    I.setDisable(true);
-                }
+            if(word.contains("I")){
+                I.setDisable(false);
             }
+            else I.setDisable(true);
         });
 
         J.setOnAction(Event->{
-            for(int count= 0; count< length; count++){
-                if('J' == word.indexOf(count) || 'J' != word.indexOf(count)){
-                    J.setDisable(true);
-                }
+            if(word.contains("J")){
+                J.setDisable(false);
             }
+            else J.setDisable(true);
         });
 
         K.setOnAction(Event->{
-            for(int count= 0; count< length; count++){
-                if('K' == word.indexOf(count) || 'K' != word.indexOf(count)){
-                    K.setDisable(true);
-                }
+            if(word.contains("K")){
+                K.setDisable(false);
             }
+            else K.setDisable(true);
         });
 
         L.setOnAction(Event->{
-            for(int count= 0; count< length; count++){
-                if('L' == word.indexOf(count) || 'L' != word.indexOf(count)){
-                    L.setDisable(true);
-                }
+            if(word.contains("L")){
+                L.setDisable(false);
             }
+            else L.setDisable(true);
         });
 
         M.setOnAction(Event->{
-            for(int count= 0; count< length; count++){
-                if('M' == word.indexOf(count) || 'M' != word.indexOf(count)){
-                    M.setDisable(true);
-                }
+            if(word.contains("M")){
+                M.setDisable(false);
             }
+            else M.setDisable(true);
         });
 
         N.setOnAction(Event->{
-            for(int count= 0; count< length; count++){
-                if('N' == word.indexOf(count) || 'N' != word.indexOf(count)){
-                    N.setDisable(true);
-                }
+            if(word.contains("N")){
+                N.setDisable(false);
             }
+            else N.setDisable(true);
         });
 
         O.setOnAction(Event->{
-            for(int count= 0; count< length; count++){
-                if('O' == word.indexOf(count) || 'O' != word.indexOf(count)){
-                    O.setDisable(true);
-                }
+            if(word.contains("O")){
+                O.setDisable(false);
             }
+            else O.setDisable(true);
         });
 
         P.setOnAction(Event->{
-            for(int count= 0; count< length; count++){
-                if('P' == word.indexOf(count) || 'P' != word.indexOf(count)){
-                    P.setDisable(true);
-                }
+            if(word.contains("P")){
+                P.setDisable(false);
             }
+            else P.setDisable(true);
         });
 
         Q.setOnAction(Event->{
-            for(int count= 0; count< length; count++){
-                if('Q' == word.indexOf(count) || 'Q' != word.indexOf(count)){
-                    Q.setDisable(true);
-                }
+            if(word.contains("Q")){
+                Q.setDisable(false);
             }
+            else Q.setDisable(true);
         });
 
         R.setOnAction(Event->{
-            for(int count= 0; count< length; count++){
-                if('R' == word.indexOf(count) || 'R' != word.indexOf(count)){
-                    R.setDisable(true);
-                }
+            if(word.contains("R")){
+                R.setDisable(false);
             }
+            else R.setDisable(true);
         });
 
         S.setOnAction(Event->{
-            for(int count= 0; count< length; count++){
-                if('S' == word.indexOf(count) || 'S' != word.indexOf(count)){
-                    S.setDisable(true);
-                }
+            if(word.contains("S")){
+                S.setDisable(false);
             }
+            else S.setDisable(true);
         });
 
         T.setOnAction(Event->{
-            for(int count= 0; count< length; count++){
-                if('T' == word.indexOf(count) || 'T' != word.indexOf(count)){
-                    T.setDisable(true);
-                }
+            if(word.contains("T")){
+                T.setDisable(false);
             }
+            else T.setDisable(true);
         });
 
         U.setOnAction(Event->{
-            for(int count= 0; count< length; count++){
-                if('U' == word.indexOf(count) || 'U' != word.indexOf(count)){
-                    U.setDisable(true);
-                }
+            if(word.contains("U")){
+                U.setDisable(false);
             }
+            else U.setDisable(true);
         });
 
         V.setOnAction(Event->{
-            for(int count= 0; count< length; count++){
-                if('V' == word.indexOf(count) || 'V' != word.indexOf(count)){
-                    V.setDisable(true);
-                }
+            if(word.contains("V")){
+                V.setDisable(false);
             }
+            else V.setDisable(true);
         });
 
         W.setOnAction(Event->{
-            for(int count= 0; count< length; count++){
-                if('W' == word.indexOf(count) || 'W' != word.indexOf(count)){
-                    W.setDisable(true);
-                }
+            if(word.contains("W")){
+                W.setDisable(false);
             }
+            else W.setDisable(true);
         });
 
         X.setOnAction(Event->{
-            for(int count= 0; count< length; count++){
-                if('X' == word.indexOf(count) || 'X' != word.indexOf(count)){
-                    X.setDisable(true);
-                }
+            if(word.contains("X")){
+                X.setDisable(false);
             }
+            else X.setDisable(true);
         });
 
         Y.setOnAction(Event->{
-            for(int count= 0; count< length; count++){
-                if('Y' == word.indexOf(count) || 'Y' != word.indexOf(count)){
-                    Y.setDisable(true);
-                }
+            if(word.contains("Y")){
+                Y.setDisable(false);
             }
+            else Y.setDisable(true);
         });
 
         Z.setOnAction(Event->{
-            for(int count= 0; count< length; count++){
-                if('Z' == word.indexOf(count) || 'Z' != word.indexOf(count)){
-                    Z.setDisable(true);
-                }
+            if(word.contains("Z")){
+                Z.setDisable(false);
             }
+            else Z.setDisable(true);
         });
 
         //*******************************************************
@@ -279,6 +253,7 @@ public class Main extends Application {
         primaryStage.setTitle("Client");
         primaryStage.setScene(client);
         primaryStage.show();
+
 
     }
 
