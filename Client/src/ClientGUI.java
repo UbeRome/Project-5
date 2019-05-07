@@ -1,309 +1,264 @@
 import javafx.application.Application;
-import javafx.application.Platform;
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
+import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.TextArea;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
-import java.util.HashMap;
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-import javafx.geometry.Insets;
+import javafx.scene.image.*;
+import javafx.scene.layout.Background;
+import javafx.scene.layout.BackgroundImage;
+import javafx.scene.layout.BackgroundRepeat;
+import javafx.scene.layout.BackgroundSize;
+import javafx.scene.layout.BackgroundPosition;
+
 import javafx.scene.control.Button;
-import javafx.scene.control.ChoiceBox;
-import javafx.scene.control.TextArea;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.BorderPane;
-import javafx.scene.layout.HBox;
-import javafx.scene.text.Text;
-import javafx.scene.text.TextAlignment;
 
-public class ClientGUI extends Application {
-	String player2Points;
-	String player1Points;
+
+public class Main extends Application {
+    //private Button a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z;
+    private Scene client;
     private TextArea messages = new TextArea();
-    private Text scoreBoard = new Text();
-    Button connect, rockButton, paperButton, scissorButton, lizardButton, spockButton, quit, quit1;
-    Text welcome, clientNo, playerMove, selectMove, gameWin, playAgain;
-    Stage myStage;
-    Scene scene, gameplay;
-    HashMap < String, Scene > sceneMap;
-    Image rockImage, paperImage, scissorImage, lizardImage, spockImage;
-    ChoiceBox<String> clientList = new ChoiceBox<String>();
-    HBox moveBox;
+    private String word = "PATHOLOGY";
 
-    int id;
-    private NetworkConnectionClient conn;
+    @Override
+    public void start(Stage primaryStage) throws Exception{
+        Button A = new Button("A");Button B = new Button("B");Button C = new Button("C");
+        Button D = new Button("D");Button E = new Button("E");Button F = new Button("F");
+        Button G = new Button("G");Button H = new Button("H");Button I = new Button("I");
+        Button J = new Button("J");Button K = new Button("K");Button L = new Button("L");
+        Button M = new Button("M");Button N = new Button("N");Button O = new Button("O");
+        Button P = new Button("P");Button Q = new Button("Q");Button R = new Button("R");
+        Button S = new Button("S");Button T = new Button("T");Button U = new Button("U");
+        Button V = new Button("V");Button W = new Button("W");Button X = new Button("X");
+        Button Y = new Button("Y");Button Z = new Button("Z");
+        messages.setPrefHeight(150);
 
-    private ClientLogic createClient() {
-        return new ClientLogic(data -> {
-            Platform.runLater(() -> {
-                int inbound;
-                moveBox.setDisable(true);
-                if (data.toString().startsWith("youare: ")){
-                    this.id = Integer.parseInt(data.toString().substring(8));
-                    System.out.println("Changing ID: " + id);
-                }
-                else if (data.toString().equals("RESET")){
-                    clientList.getItems().clear();
-                }
-                else if (data.toString().equals("lockConnection")){
-                    clientList.setDisable(true);
-                }
-                else if (data.toString().equals("unlockConnection")){
-                    clientList.setDisable(false);
-                }
-                else if (data.toString().startsWith("cl: ")) {
-                    inbound = Integer.parseInt(data.toString().substring(11));
-                    if (id != inbound) {
-                        clientList.getItems().add(data.toString().substring(4));
-                    }
-                }
-                else if (data.toString().equals("ready")){
-                    moveBox.setDisable(false);
-                }
-                else {
-                    messages.appendText(data.toString());
-                }
-            });
+        VBox Col1 = new VBox();
+        VBox Col2 = new VBox();
+        HBox Row1 = new HBox();
+
+        Col1.setSpacing(20);
+        Col2.setSpacing(20);
+        Row1.setSpacing(40);
+        Row1.setPadding(new Insets(10,30,10,30));
+
+        //Background image
+        // create A image
+        Image image = new Image("land.jpg");
+        // create A background image
+        BackgroundImage backgroundimage = new BackgroundImage(image,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundRepeat.NO_REPEAT,
+                BackgroundPosition.DEFAULT,
+                BackgroundSize.DEFAULT);
+        // create Background
+        Background background = new Background(backgroundimage);
+        Row1.setBackground(background);
+
+        Col1.getChildren().addAll(A,B,C,D,E,F,G,H,I,J,K,L,M);
+        Col2.getChildren().addAll(N,O,P,Q,R,S,T,U,V,W,X,Y,Z);
+        Row1.getChildren().addAll(Col1,Col2, messages);
+        //******************************************************
+        int length = word.length();
+        A.setOnAction(Event->{
+            if(word.contains("A")){
+                A.setDisable(false);
+            }
+            else A.setDisable(true);
         });
+
+        B.setOnAction(Event->{
+            if(word.contains("B")){
+                B.setDisable(false);
+            }
+            else B.setDisable(true);
+        });
+
+        C.setOnAction(Event->{
+            if(word.contains("C")){
+                C.setDisable(false);
+            }
+            else C.setDisable(true);
+        });
+
+        D.setOnAction(Event->{
+            if(word.contains("D")){
+                D.setDisable(false);
+            }
+            else D.setDisable(true);
+        });
+
+        E.setOnAction(Event->{
+            if(word.contains("E")){
+                E.setDisable(false);
+            }
+            else E.setDisable(true);
+        });
+
+        F.setOnAction(Event->{
+            if(word.contains("F")){
+                F.setDisable(false);
+            }
+            else F.setDisable(true);
+        });
+
+        G.setOnAction(Event->{
+            if(word.contains("G")){
+                G.setDisable(false);
+            }
+            else G.setDisable(true);
+        });
+
+        H.setOnAction(Event->{
+            if(word.contains("H")){
+                H.setDisable(false);
+            }
+            else H.setDisable(true);
+        });
+
+        I.setOnAction(Event->{
+            if(word.contains("I")){
+                I.setDisable(false);
+            }
+            else I.setDisable(true);
+        });
+
+        J.setOnAction(Event->{
+            if(word.contains("J")){
+                J.setDisable(false);
+            }
+            else J.setDisable(true);
+        });
+
+        K.setOnAction(Event->{
+            if(word.contains("K")){
+                K.setDisable(false);
+            }
+            else K.setDisable(true);
+        });
+
+        L.setOnAction(Event->{
+            if(word.contains("L")){
+                L.setDisable(false);
+            }
+            else L.setDisable(true);
+        });
+
+        M.setOnAction(Event->{
+            if(word.contains("M")){
+                M.setDisable(false);
+            }
+            else M.setDisable(true);
+        });
+
+        N.setOnAction(Event->{
+            if(word.contains("N")){
+                N.setDisable(false);
+            }
+            else N.setDisable(true);
+        });
+
+        O.setOnAction(Event->{
+            if(word.contains("O")){
+                O.setDisable(false);
+            }
+            else O.setDisable(true);
+        });
+
+        P.setOnAction(Event->{
+            if(word.contains("P")){
+                P.setDisable(false);
+            }
+            else P.setDisable(true);
+        });
+
+        Q.setOnAction(Event->{
+            if(word.contains("Q")){
+                Q.setDisable(false);
+            }
+            else Q.setDisable(true);
+        });
+
+        R.setOnAction(Event->{
+            if(word.contains("R")){
+                R.setDisable(false);
+            }
+            else R.setDisable(true);
+        });
+
+        S.setOnAction(Event->{
+            if(word.contains("S")){
+                S.setDisable(false);
+            }
+            else S.setDisable(true);
+        });
+
+        T.setOnAction(Event->{
+            if(word.contains("T")){
+                T.setDisable(false);
+            }
+            else T.setDisable(true);
+        });
+
+        U.setOnAction(Event->{
+            if(word.contains("U")){
+                U.setDisable(false);
+            }
+            else U.setDisable(true);
+        });
+
+        V.setOnAction(Event->{
+            if(word.contains("V")){
+                V.setDisable(false);
+            }
+            else V.setDisable(true);
+        });
+
+        W.setOnAction(Event->{
+            if(word.contains("W")){
+                W.setDisable(false);
+            }
+            else W.setDisable(true);
+        });
+
+        X.setOnAction(Event->{
+            if(word.contains("X")){
+                X.setDisable(false);
+            }
+            else X.setDisable(true);
+        });
+
+        Y.setOnAction(Event->{
+            if(word.contains("Y")){
+                Y.setDisable(false);
+            }
+            else Y.setDisable(true);
+        });
+
+        Z.setOnAction(Event->{
+            if(word.contains("Z")){
+                Z.setDisable(false);
+            }
+            else Z.setDisable(true);
+        });
+
+        //*******************************************************
+
+        client = new Scene(Row1, 1000, 600);
+        primaryStage.setTitle("Client");
+        primaryStage.setScene(client);
+        primaryStage.show();
+
+
     }
+
 
     public static void main(String[] args) {
         launch(args);
     }
 
-    @Override
-    public void start(Stage primaryStage) throws Exception {
-        // TODO Auto-generated method stub
-        primaryStage.setTitle("Rock Paper Scissor Lizard Spock Client");
-        myStage = primaryStage;
-        welcome = new Text("Welcome to Rock Paper Scissors Lizard Spock! ");
-        selectMove = new Text("Make your choice: ");
-        connect = new Button("Connect");
-        quit1 = new Button("Quit");
-        quit = new Button("Quit");
-        scoreBoard.setTextAlignment(TextAlignment.LEFT);;
-        messages.setPrefHeight(550);
 
-        //clientList.getItems().add("Testing");
-        //clientList.getItems().add("1");
-        //clientList.getItems().add("2");
-        //clientList.getItems().add("3");
-
-        clientList.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
-            @Override
-            public void changed(ObservableValue<? extends Number> observableValue, Number number, Number number2) {
-            	String playerSelect = clientList.getItems().get((Integer) number2).substring(7);
-            	String players = "players: " + id + " " + playerSelect;
-            	try {conn.send(players);} catch (Exception e){}
-            	clientList.getSelectionModel().clearSelection();
-            }
-        });
-        
-        String rockFile = "Rock.png";
-        try {
-            rockImage = new Image(rockFile);
-
-        } catch (Exception ex) {
-            System.out.println(String.format("Error loading image from: (%s)", rockFile));
-            rockImage = null;
-        }
-
-        String paperFile = "Paper.png";
-        try {
-            paperImage = new Image(paperFile);
-
-        } catch (Exception ex) {
-            System.out.println(String.format("Error loading image from: (%s)", paperFile));
-            paperImage = null;
-        }
-
-        String scissorFile = "Scissor.png";
-        try {
-            scissorImage = new Image(scissorFile);
-
-        } catch (Exception ex) {
-            System.out.println(String.format("Error loading image from: (%s)", scissorFile));
-            scissorImage = null;
-        }
-
-        String lizardFile = "Lizard.png";
-        try {
-            lizardImage = new Image(lizardFile);
-
-        } catch (Exception ex) {
-            System.out.println(String.format("Error loading image from: (%s)", lizardFile));
-            lizardImage = null;
-        }
-
-        String spockFile = "Spock.png";
-        try {
-            spockImage = new Image(spockFile);
-
-        } catch (Exception ex) {
-            System.out.println(String.format("Error loading image from: (%s)", spockFile));
-            spockImage = null;
-        }
-
-        rockButton = new Button();
-        paperButton = new Button();
-        scissorButton = new Button();
-        lizardButton = new Button();
-        spockButton = new Button();
-        moveBox = new HBox(10, rockButton, paperButton, scissorButton, lizardButton, spockButton);
-
-        ImageView rock = new ImageView(rockImage);
-        ImageView paper = new ImageView(paperImage);
-        ImageView scissor = new ImageView(scissorImage);
-        ImageView lizard = new ImageView(lizardImage);
-        ImageView spock = new ImageView(spockImage);
-        rock.setFitHeight(100);
-        rock.setFitWidth(100);
-        rock.setPreserveRatio(true);
-        rockButton.setGraphic(rock);
-        rockButton.setPadding(Insets.EMPTY);
-
-        paper.setFitHeight(100);
-        paper.setFitWidth(100);
-        paper.setPreserveRatio(true);
-        paperButton.setGraphic(paper);
-        paperButton.setPadding(Insets.EMPTY);
-
-        scissor.setFitHeight(100);
-        scissor.setFitWidth(100);
-        scissor.setPreserveRatio(true);
-        scissorButton.setGraphic(scissor);
-        scissorButton.setPadding(Insets.EMPTY);
-
-        lizard.setFitHeight(100);
-        lizard.setFitWidth(100);
-        lizard.setPreserveRatio(true);
-        lizardButton.setGraphic(lizard);
-        lizardButton.setPadding(Insets.EMPTY);
-
-        spock.setFitHeight(100);
-        spock.setFitWidth(100);
-        spock.setPreserveRatio(true);
-        spockButton.setGraphic(spock);
-        spockButton.setPadding(Insets.EMPTY);
-
-        sceneMap = new HashMap < String, Scene > ();
-      
-        connect.setOnAction(new EventHandler <ActionEvent> () {
-            public void handle(ActionEvent event) {
-                try {
-                    conn = createClient();
-                    try {
-                        conn.startConn();
-                    } catch (Exception e) {
-                        System.out.println("Connection not established");
-                    }
-                    myStage.setScene(sceneMap.get("gamePlay"));
-                } catch (NumberFormatException e) {
-                    
-                }
-            }
-        });
-
-        quit.setOnAction(new EventHandler < ActionEvent > () {
-            public void handle(ActionEvent event) {
-                Stage stage = (Stage) quit.getScene().getWindow();
-                stage.close();
-            }
-        });
-
-        quit1.setOnAction(new EventHandler < ActionEvent > () {
-            public void handle(ActionEvent event) {
-                Stage stage = (Stage) quit.getScene().getWindow();
-                stage.close();
-            }
-        });
-
-
-        rockButton.setOnAction(new EventHandler < ActionEvent > () {
-            public void handle(ActionEvent event) {
-                String message = "rock";
-                try {
-                    conn.send(message);
-                    moveBox.setDisable(true);
-                } catch (Exception e) {
-                    // TODO Auto-generated catch block
-                    System.out.println("Connection unavailable");
-                }
-            }
-        });
-
-        paperButton.setOnAction(new EventHandler < ActionEvent > () {
-            public void handle(ActionEvent event) {
-                String message = "paper";
-                try {
-                    conn.send(message);
-                    moveBox.setDisable(true);
-                } catch (Exception e) {
-                    // TODO Auto-generated catch block
-                    System.out.println("Connection unavailable");
-                }
-            }
-        });
-
-        scissorButton.setOnAction(new EventHandler < ActionEvent > () {
-            public void handle(ActionEvent event) {
-                String message = "scissor";
-                try {
-                    conn.send(message);
-                    moveBox.setDisable(true);
-                } catch (Exception e) {
-                    // TODO Auto-generated catch block
-                    System.out.println("Connection unavailable");
-                }
-            }
-        });
-
-        lizardButton.setOnAction(new EventHandler < ActionEvent > () {
-            public void handle(ActionEvent event) {
-                String message = "lizard";
-                try {
-                    conn.send(message);
-                    moveBox.setDisable(true);
-                } catch (Exception e) {
-                    // TODO Auto-generated catch block
-                    System.out.println("Connection unavailable");
-                }
-            }
-        });
-
-        spockButton.setOnAction(new EventHandler < ActionEvent > () {
-            public void handle(ActionEvent event) {
-                String message = "spock";
-                try {
-                    conn.send(message);
-                    moveBox.setDisable(true);
-                } catch (Exception e) {
-                    // TODO Auto-generated catch block
-                    System.out.println("Connection unavailable");
-                }
-            }
-        });
-        
-        BorderPane pane = new BorderPane();
-        pane.setPadding(new Insets(70));
-        VBox paneCenter = new VBox(10, welcome, connect, quit);
-        pane.setCenter(paneCenter);
-
-
-        VBox box = new VBox(5, scoreBoard, messages, selectMove, moveBox, quit1);
-        HBox newBox = new HBox(5, box, clientList);
-        BorderPane pane2 = new BorderPane();
-        pane2.setPadding(new Insets(70));
-        pane2.setCenter(newBox);
-
-        scene = new Scene(pane, 400, 500);
-        gameplay = new Scene(pane2, 800, 700);
-        sceneMap.put("welcome", scene);
-        sceneMap.put("gamePlay", gameplay);
-        primaryStage.setScene(sceneMap.get("welcome"));
-        primaryStage.show();
-    }
 }

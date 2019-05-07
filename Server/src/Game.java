@@ -14,12 +14,6 @@ public class Game {
         return status;
     }
 
-
-    public void setWinner(String w){
-        this.winner = w;
-    }
-
-
     public int getNumClients() {
         return numClients;
     }
