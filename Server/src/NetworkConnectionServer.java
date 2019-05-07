@@ -116,12 +116,12 @@ public abstract class NetworkConnectionServer {
                 while(true) {
                     Serializable data = (Serializable) in.readObject();
                     Thread.sleep(1000);
-                    if(data.toString().startsWith("players: ")){            // Gets the two players for the game
+                    if(data.toString().startsWith("players: ")){            // Gets the four players for the game
                         p1 = Integer.parseInt(data.toString().substring(9, data.toString().length() - 2));  // game will fail attempting to connect to players greater than 10
                         p2 = Integer.parseInt(data.toString().substring(11));
                         sendAll("lockConnection");          // Locks clients dropdown lists
-                        send("ready", p1 - 1);         // Unlocks clients gameplay options
-                        send("ready", p2 - 1);          //
+                        send("ready", p1 - 1);        // Unlocks clients gameplay options
+                        send("ready", p2 - 1);        //
                     }
 
                     if(game.getNumClients() >= 4) {

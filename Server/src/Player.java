@@ -4,7 +4,7 @@ public class Player {
     public Thread thread;
     public String name;
     public Serializable guess;
-    public Serializable gameWord;
+    public Serializable displayWord;
     public int wins;
     public int numGuesses;
     public int numWrongGuesses;
@@ -36,9 +36,9 @@ public class Player {
         this.points = val;
     }
 
-    public Serializable getGameWord() { return gameWord; }
+    public Serializable getdisplayWord() { return displayWord; }
 
-    public void setGameWord(Serializable val) {this.gameWord = val}
+    public void setdisplayWord(Serializable val) {this.displayWord = val}
 
     public boolean getPlayAgain(){
         return getPlayAgain();

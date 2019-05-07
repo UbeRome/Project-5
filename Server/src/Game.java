@@ -1,3 +1,5 @@
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.Serializable;
 import java.util.ArrayList;
 
@@ -17,7 +19,6 @@ public class Game {
         this.winner = w;
     }
 
-    public boolean isReady(){return this.ready;}
 
     public int getNumClients() {
         return numClients;
@@ -52,15 +53,15 @@ public class Game {
     }
 
     public boolean verifyWord(String w){
-        String filename = "/Dict/" + w.charAt(0).toUpperCase() + "word.csv";
+        String filename = "/Dict/" + w.toUpperCase().charAt(0) + "word.csv";
         BufferedReader br = null;
-        line = "";
-        delim = ",";
+        String line = "";
+        String delim = ",";
 
         try {
             br = new BufferedReader(new FileReader(filename));
             while ((line = br.readLine()) != null){
-                    if (w.toLowerCase().equals(line.toString().toLowerCase())){
+                    if (w.toLowerCase().equals(line.toLowerCase())){
                         this.word = w;
                         return true;
                     }
@@ -72,27 +73,31 @@ public class Game {
         }
     }
 
-    public Serializable checkGuess(Player p){
-        Serializable tmp = p.getGameWord();
-        Serializabe guess = p.getGuess;
-        if (guess.toString().equals(this.word)){
-            p.setPlay(this.word);
+    public String checkGuess(Player p){
+        String tmp = p.getdisplayWord().toString();
+        String guess = p.getGuess().toString();
+        if (guess.equals(this.word)){  //Player guessed full word
+            p.setGuess(this.word);
+            setWinner(p);
             return word;
         }
 
         int i;
-        for (i = 0; i < word.length(); i++){
-               if (word.charAt(i).equals(guess)){
-                   tmp.charAt(i) = guess;
-               }
+        if (guess.length() == 1) {
+            for (i = 0; i < word.length(); i++) {
+                if (word.charAt(i) == guess.charAt(0)) { // Player guessed a character
+                    tmp = tmp.replace(tmp.charAt(i), guess.charAt(0));
+                }
+            }
         }
-        p.setGameWord()
+        p.setdisplayWord(tmp);
+        setWinner(p);
         return tmp;
     }
 
 
 
-    private void setWinner(){
-        this.winner =
+    private void setWinner(Player player){
+        this.winner = player.name;
     }
 }
